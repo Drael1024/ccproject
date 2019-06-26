@@ -31,3 +31,18 @@ def isWinner(tableName, letter): # Win condition checker.
     for i,j,k in winCombinations: # Iterating through the winCombinations, if there's any match, returns true!
         if (tableName[i] == letter and tableName[j] == letter and tableName[k] == letter):
             return True
+
+def playerTurn(): # :)
+    while True:
+        try:
+            position = int(input('Where do you want to place your cross? (1-9) >>>'))
+            if pos > 0 and pos < 10:
+                if spaceIsFree(position): # If it's empty, player can place the symbol.
+                    placeLetter('X', position)
+                    break
+                else: # If it's not, then:
+                    print('It\'s not an empty slot, please pick another one!')
+            else: # Player input was out of range.
+                print('Invalid input! Your number is out of the allowed range!')
+        except: # Fool proofing the input. If it can't convert to int, make him redo the procedure!
+            print('Invalid input! You must enter a number!')
