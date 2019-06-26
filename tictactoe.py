@@ -98,3 +98,30 @@ def AI():
         move = emptyEdges[r]
         
     return move # When there are no possibilites left, the AI puts a symbol at the 0th index! It means the game is over and it's a draw!
+
+def main():
+    showTable(table)
+
+    while (' ' in table):
+        if not(isWinner(table, 'O')):
+            playerTurn()
+            showTable(table)
+        else:
+            print('You lost... (╥﹏╥)')
+            break
+        if not(isWinner(table, 'X')):
+            move = AI()
+            if move == 0:
+                print('Draw! ( ͡° ͜ʖ ͡°)')
+                break
+            else:
+                time.sleep(1)
+                placeLetter('O', move)
+                showTable(table)
+        else:
+            print('You won! \(ˆ˚ˆ)/ ')
+            break
+    else:
+        print('Draw! ( ͡° ͜ʖ ͡°)')
+
+main()
