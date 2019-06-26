@@ -1,11 +1,19 @@
+import random
+import os
+import time
+
 table = [' ' for x in range(10)] # Creating the table for the game. (Note: We won't use the 0th element!!!)
 
-def showTable(): # Prints out the table.
-    print(' ' + table[1] + ' | ' + table[2] + ' | ' + table[3])
+def clear():
+    os.system('cls' if os.name=='nt' else 'clear')
+
+def showTable(table): # Prints out the table.
+    clear()
+    print(' ' + table[7] + ' | ' + table[8] + ' | ' + table[9])
     print('-----------')
     print(' ' + table[4] + ' | ' + table[5] + ' | ' + table[6])
     print('-----------')
-    print(' ' + table[7] + ' | ' + table[8] + ' | ' + table[9])
+    print(' ' + table[1] + ' | ' + table[2] + ' | ' + table[3])
 
 def placeLetter(letter, position): # Inserts the given symbol into the given position.
     table[position] = letter
