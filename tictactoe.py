@@ -36,7 +36,7 @@ def playerTurn(): # :)
     while True:
         try:
             position = int(input('Where do you want to place your cross? (1-9) >>>'))
-            if pos > 0 and pos < 10:
+            if position > 0 and position < 10:
                 if spaceIsFree(position): # If it's empty, player can place the symbol.
                     placeLetter('X', position)
                     break
